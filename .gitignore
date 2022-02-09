@@ -1,0 +1,11 @@
+# HardHat Files
+cache
+artifacts
+
+node_modules
+.env
+frontend
+coverage
+coverage.json
+typechain
+

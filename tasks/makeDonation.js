@@ -13,12 +13,12 @@ async function main() {
         const myContract = await ethers.getContractAt('Donation', contractAddress, signer);
         const value = ethers.utils.parseEther('0.001');
         const balanceBefor = await myContract.totalDonations(); 
-        console.log("Balance before donation: " + balanceBefor);
+        const balanceBeforDonation = await ethers.utils.formatEther(balanceBefor);  
+        console.log("Balance before donation: " + balanceBeforDonation);
         await myContract.connect(signer).donate({ value });
-        // await myContract.donate(value, {from: signer });
-        await myContract.donate();
-        const balanceAfter = await myContract.totalDonations(); 
-        console.log("Balance after donation: " + balanceAfter);
+        const balanceAfter = await myContract.totalDonations();
+        const balanceAfterDonation = await ethers.utils.formatEther(balanceAfter);  
+        console.log("Balance after donation: " + balanceAfterDonation);
         
 }
     

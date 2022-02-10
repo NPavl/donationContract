@@ -8,9 +8,8 @@ async function main() {
         
         const withdrewAddr = "0xD8b46be309a729f6BAcb48D32DeA5D4aAF3a8CDE";
         const contractAddress = "0xe444bB4fB78476143dAf5910bD468a670EbF4F05";
-        const value = ethers.utils.parseEther('0.001');
-        const value2 = "1000000000000000";
-        const value3 = "0.001";
+        const value = ethers.utils.parseEther('0.002');
+      
         const provider = new ethers.providers.JsonRpcProvider(URL_ALCHEMY); // using default http://localhost:8545
         const signer = new ethers.Wallet(PRIVATE_KEY, provider);
         const myContract = await ethers.getContractAt('Donation', contractAddress, signer);
@@ -23,8 +22,8 @@ async function main() {
         const WithdreAddrEthValueBefor = await ethers.utils.formatEther(balancebefor);  
         console.log("Withdrew balance before: " + WithdreAddrEthValueBefor);
         
-        await myContract.withdraw(value2);
-
+        await myContract.withdraw(value);
+        
         const contractBalanceAfter = await myContract.totalDonations(); 
         const contractEthBalanceAfter = await ethers.utils.formatEther(contractBalanceAfter);
         console.log("Contract balance after withdrew: " + contractEthBalanceAfter);

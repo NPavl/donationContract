@@ -1,4 +1,5 @@
 const hre = require("hardhat");
+const fs = require('fs'); 
 async function main() {
 
   const [deployer] = await ethers.getSigners();
@@ -12,11 +13,11 @@ async function main() {
 
   console.log("Donation contract address:", donation.address);
 
-  const data = {
-    address: donation.address,
-    abi: JSON.parse(donation.interface.format("json"))
-  };
-  fs.writeFileSync('frontend/packages/contracts/src/abis/Donation.json', JSON.stringify(data));
+  // const data = {
+  //   address: donation.address,
+  //   abi: JSON.parse(donation.interface.format("json"))
+  // };
+  // fs.writeFileSync('frontend/packages/contracts/src/abis/Donation.json', JSON.stringify(data));
 }
 
 main()

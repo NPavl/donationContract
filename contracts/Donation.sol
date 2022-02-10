@@ -92,7 +92,7 @@ contract Donation is Ownable {
         uint256 balance = address(this).balance;
         require(_value <= balance, "wrong amount");
         balance = balance.sub(_value);
-        withdrewAddr.transfer(balance);
-        totalDonations = totalDonations.sub(balance);
+        totalDonations = balance;
+        withdrewAddr.transfer(_value);
     }
 }

@@ -1,2 +1,4 @@
-Donation contract address: 0x3446a1e9428CA1A5d419233b5E27956D0508c3AE
-Etherscan: https://rinkeby.etherscan.io/address/0x3446a1e9428CA1A5d419233b5E27956D0508c3AE#code
+# Donation contract address:
+0xe444bB4fB78476143dAf5910bD468a670EbF4F05
+# Etherscan verify:
+https://rinkeby.etherscan.io/address/0xe444bB4fB78476143dAf5910bD468a670EbF4F05#code

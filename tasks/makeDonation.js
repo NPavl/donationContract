@@ -1,6 +1,6 @@
 // сделать пожертвование 
 
-require("@nomiclabs/hardhat-web3");
+// require("@nomiclabs/hardhat-web3");
 require('dotenv').config();
 const { ethers } = require("hardhat");
 const { PRIVATE_KEY, URL_ALCHEMY } = process.env;

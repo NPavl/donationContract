@@ -1,8 +1,9 @@
 // вывод средств на withdrewAddr в определенном количестве 
 
-require("@nomiclabs/hardhat-web3");
+// require("@nomiclabs/hardhat-web3");
+const { ethers } = require("hardhat");
 require('dotenv').config();
-const { PRIVATE_KEY, WITHDREW_PRIVATE_KEY, URL_ALCHEMY } = process.env;
+const { PRIVATE_KEY, URL_ALCHEMY } = process.env;
 
 async function main() {
         

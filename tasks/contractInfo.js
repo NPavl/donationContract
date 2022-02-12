@@ -1,4 +1,5 @@
-require("@nomiclabs/hardhat-web3");
+// require("@nomiclabs/hardhat-web3");
+const { ethers } = require("hardhat");
 require('dotenv').config();
 const { PRIVATE_KEY, URL_ALCHEMY } = process.env;
 

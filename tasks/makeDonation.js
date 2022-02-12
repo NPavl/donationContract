@@ -12,13 +12,21 @@ async function main() {
         const signer = new ethers.Wallet(PRIVATE_KEY, provider);
         const myContract = await ethers.getContractAt('Donation', contractAddress, signer);
         const value = ethers.utils.parseEther('0.001');
-        const balanceBefor = await myContract.totalDonations(); 
-        const balanceBeforDonation = await ethers.utils.formatEther(balanceBefor);  
-        console.log("Balance before donation: " + balanceBeforDonation);
-        await myContract.connect(signer).donate({ value });
-        const balanceAfter = await myContract.totalDonations();
-        const balanceAfterDonation = await ethers.utils.formatEther(balanceAfter);  
-        console.log("Balance after donation: " + balanceAfterDonation);
+        
+        try {
+
+          const balanceBefor = await myContract.totalDonations(); 
+          const balanceBeforDonation = await ethers.utils.formatEther(balanceBefor);  
+          console.log("Balance before donation: " + balanceBeforDonation);
+          await myContract.connect(signer).donate({ value });
+          
+        } catch (error) {
+          console.log('Something went wrong');
+        }
+         
+        // const balanceAfter = await myContract.totalDonations();
+        // const balanceAfterDonation = await ethers.utils.formatEther(balanceAfter);  
+        // console.log("Balance after donation: " + balanceAfterDonation);
         
 }
     
